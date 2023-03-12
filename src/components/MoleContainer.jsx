@@ -4,7 +4,7 @@ import { useState } from 'react'
 
 function MoleContainer(props){
 
-    const {score, setScore} = props
+    const {setScore} = props
 
     const [displayMole, setDisplayMole] = useState(false)
 
@@ -15,8 +15,12 @@ function MoleContainer(props){
 
     return (
         <div>
-            <h2> Mole Container </h2>
-            {displayMole ? <Mole /> : <EmptySlot />}
+            {displayMole ? <Mole
+                setDisplayMole={setDisplayMole} 
+                bop={bop}
+            /> : <EmptySlot 
+                setDisplayMole={setDisplayMole} 
+            />}
         </div>
     )
 }
